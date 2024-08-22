@@ -11,12 +11,13 @@ local options = {
     json = { "prettier" },
     yaml = { "prettier" },
     markdown = { "prettier" },
-    python = { 'isort', 'autopep8' },
+    python = { "autopep8" },
   },
 
   format_on_save = {
     -- These options will be passed to conform.format()
-    timeout_ms = 500,
+    async = true,
+    timeout_ms = 1000,
     lsp_fallback = true,
   },
 }

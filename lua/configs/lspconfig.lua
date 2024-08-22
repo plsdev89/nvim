@@ -23,3 +23,14 @@ lspconfig.tsserver.setup {
   capabilities = nvlsp.capabilities,
   root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
 }
+
+-- Setup python-lsp-server
+lspconfig.pylsp.setup {
+  settings = {
+    pylsp = {
+      plugins = {
+        -- You can enable other plugins or settings as needed
+      },
+    },
+  },
+}
