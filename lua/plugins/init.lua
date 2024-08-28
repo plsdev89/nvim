@@ -18,6 +18,29 @@ return {
       require("nvim-ts-autotag").setup()
     end,
   },
+  {
+    "sindrets/diffview.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles" },
+    config = function()
+      require("diffview").setup {
+        -- Optional config
+      }
+    end,
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = { "kevinhwang91/promise-async", "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      -- Optional configuration for nvim-ufo
+      require("ufo").setup {
+        provider_selector = function()
+          return { "treesitter", "indent" }
+        end,
+      }
+    end,
+  },
+
   -- These are some examples, uncomment them if you want to see them work!
   {
     "williamboman/mason.nvim",
