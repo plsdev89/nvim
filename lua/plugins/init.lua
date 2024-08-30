@@ -6,7 +6,7 @@ return {
   },
   {
     "mfussenegger/nvim-lint",
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre" },
     config = function()
       require "configs.lint"
     end,
@@ -21,22 +21,10 @@ return {
   {
     "sindrets/diffview.nvim",
     dependencies = "nvim-lua/plenary.nvim",
-    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles" },
+    cmd = { "DiffviewOpen", "DiffviewClose" },
     config = function()
       require("diffview").setup {
         -- Optional config
-      }
-    end,
-  },
-  {
-    "kevinhwang91/nvim-ufo",
-    dependencies = { "kevinhwang91/promise-async", "nvim-treesitter/nvim-treesitter" },
-    config = function()
-      -- Optional configuration for nvim-ufo
-      require("ufo").setup {
-        provider_selector = function()
-          return { "treesitter", "indent" }
-        end,
       }
     end,
   },
@@ -84,27 +72,5 @@ return {
         "python",
       },
     },
-  },
-  {
-    "barrett-ruth/import-cost.nvim",
-    build = "sh install.sh yarn",
-    event = "BufReadPost", -- Load when a buffer is read
-    config = function()
-      require("import-cost").setup {
-        -- Configuration options for import-cost.nvim
-      }
-    end,
-  },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    ---@module "ibl"
-    ---@type ibl.config
-    opts = {},
-    config = function()
-      require("ibl").setup {
-        indent = { char = "▏" },
-      }
-    end,
   },
 }
