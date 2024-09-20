@@ -27,3 +27,5 @@ autocmd("BufReadPost", {
 autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
   command = "checktime",
 })
+
+vim.wo.relativenumber = true
