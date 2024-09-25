@@ -5,6 +5,7 @@ return {
     require("nvchad.configs.lspconfig").defaults()
 
     local lspconfig = require "lspconfig"
+    local util = require "lspconfig.util"
 
     -- EXAMPLE
     local servers = {
@@ -15,10 +16,15 @@ return {
           python = {
             analysis = {
               autoSearchPaths = true,
-              typeCheckingMode = "basic",
+              useLibraryCodeForTypes = true,
+              typeCheckingMode = "off",
             },
           },
         },
+        root_dir = function(fname)
+          return util.root_pattern(".git", "setup.py", "setup.cfg", "pyproject.toml", "requirements.txt")(fname)
+            or util.path.dirname(fname)
+        end,
       },
       ts_ls = {
         root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),

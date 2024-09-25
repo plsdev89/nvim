@@ -2,7 +2,7 @@ return {
   "hrsh7th/nvim-cmp",
   dependencies = {
     {
-      "jcdickinson/codeium.nvim",
+      "Exafunction/codeium.nvim",
       config = function()
         require("codeium").setup {}
       end,
