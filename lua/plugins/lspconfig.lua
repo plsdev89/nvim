@@ -11,6 +11,11 @@ return {
     local servers = {
       html = {},
       cssls = {},
+      tailwindcss = {
+        root_dir = function(...)
+          return require("lspconfig.util").root_pattern "tailwind.config.ts"(...)
+        end,
+      },
       pyright = {
         settings = {
           python = {
@@ -27,6 +32,7 @@ return {
         end,
       },
       ts_ls = {
+        importModuleSpecifierPreference = "non-relative",
         root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
       },
     }

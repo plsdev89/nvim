@@ -23,12 +23,12 @@ return {
     neocodeium.setup()
     vim.keymap.set("i", "<A-y>", function()
       require("neocodeium").accept()
-    end, { desc = "Accept codeium suggestion" })
+    end, { desc = "Codeium Accept suggestion" })
     vim.keymap.set("i", "<A-n>", function()
       require("neocodeium").cycle_or_complete()
-    end, { desc = "Cycle or complete codeium suggestion" })
+    end, { desc = "Codeium Cycle suggestion" })
     vim.keymap.set("i", "<A-c>", function()
       require("neocodeium").clear()
-    end, { desc = "Clear codeium suggestion" })
+    end, { desc = "Codeium Clear suggestion" })
   end,
 }
