@@ -1,5 +1,7 @@
 require "nvchad.mappings"
 
+vim.api.nvim_del_keymap("n", "<leader>b")
+
 -- add yours here
 
 local map = vim.keymap.set
@@ -22,13 +24,7 @@ map("v", "<Left>", "<Nop>", { noremap = true, silent = true })
 map("v", "<Right>", "<Nop>", { noremap = true, silent = true })
 map(
   "n",
-  "<leader>cb",
+  "<leader>bc",
   ':lua require("nvchad.tabufline").closeAllBufs()<CR>',
   { noremap = true, silent = true, desc = "Buffer Close all" }
 )
-
-for i = 1, 9, 1 do
-  map("n", string.format("<A-%s>", i), function()
-    vim.api.nvim_set_current_buf(vim.t.bufs[i])
-  end)
-end

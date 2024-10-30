@@ -1,12 +1,15 @@
 return {
   "hedyhli/outline.nvim",
-  cmd = { "Outline" },
+  keys = {
+    { "<leader>o", "<cmd>Outline<cr>", desc = "Outline" },
+  },
   config = function()
-    -- Example mapping to toggle outline
-    vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
-
     require("outline").setup {
       -- Your setup opts here (leave empty to use defaults)
+      auto_close = true, -- Automatically close the outline when focusing another window
+      auto_preview = false, -- Disable automatic preview of symbols
+      highlight_hovered_item = true, -- Highlight the currently hovered item in the outline
+      show_guides = true, -- Show guides for nested symbols
     }
   end,
 }

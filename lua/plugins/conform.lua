@@ -17,7 +17,7 @@ return {
       python = { "autopep8" },
     },
 
-    format_on_save = {
+    format_after_save = {
       -- These options will be passed to conform.format()
       async = true,
       timeout_ms = 3000,

@@ -24,7 +24,7 @@ return {
       end
 
       -- stylua: ignore start
-      map("n", "]h", function()
+      map("n", "]c", function()
         if vim.wo.diff then
           vim.cmd.normal({ "]c", bang = true })
         else
@@ -32,7 +32,7 @@ return {
           vim.cmd('normal! zz')
         end
       end, "Next Hunk")
-      map("n", "[h", function()
+      map("n", "[c", function()
         if vim.wo.diff then
           vim.cmd.normal({ "[c", bang = true })
         else
