@@ -32,8 +32,12 @@ return {
         end,
       },
       ts_ls = {
-        importModuleSpecifierPreference = "non-relative",
-        root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", ".git"),
+        init_options = {
+          hostInfo = "neovim",
+          preferences = {
+            importModuleSpecifierPreference = "non-relative",
+          },
+        },
       },
     }
     local configs = require "nvchad.configs.lspconfig"
